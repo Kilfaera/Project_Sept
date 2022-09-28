@@ -1,3 +1,4 @@
+from lib2to3.refactor import MultiprocessingUnsupported
 from utils.menus import getInput
 from utils.jokes import jokeSelect
 import time
@@ -15,7 +16,7 @@ while response != 1:
         print("Perfecto, vamos a iniciar")
     if response == 2:
         jokeSelect()
-        time.sleep(5)
+        time.sleep(5.0)
     elif response == 3:
         exit()
 
@@ -30,4 +31,16 @@ while confirm != 1:
     if confirm == 2:
         userName = input("Ingrese su nombre de usuario\n")
 
-print("")
+# *******************************************************************
+from utils.elections import fourthElection, startRoom, firstElection, firstElection, secondElection
+
+nextStage = True
+while nextStage:
+    nextStage = firstElection(startRoom())
+
+mind = firstElection()
+print("Mente",mind)
+
+mind += secondElection()
+print("Mente",mind)
+mind += fourthElection

@@ -1,3 +1,5 @@
+import time
+
 def getInput(opc: list)-> int:
     
     printOptions(opc)
@@ -24,3 +26,17 @@ def validation(input, length):
         return 1 <= input <= length
     except ValueError:
         return False
+
+def dead():
+    time.sleep(2.0)
+    print("Has muerto ¿Que quieres hacer?")
+    gameOver = getInput(
+        [
+            "Volver a empezar",
+            "Finalizar juego"
+        ]
+    )
+    if gameOver == 1:
+        return 
+    else:
+        exit()
